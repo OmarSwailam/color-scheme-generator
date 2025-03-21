@@ -30,4 +30,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+
+    // generate schema
+    const BASE_URL = "https://www.thecolorapi.com"
+    const ENDPOINT = "/scheme"
+
+    const colorsContainers = document.querySelectorAll("#color-container")
+
+    const form = document.getElementById("generate-form")
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(form);
+        const hex = formData.get("hex").slice(1)
+        const mode = formData.get("mode")
+        fetch(`${BASE_URL}${ENDPOINT}?hex=${hex}&mode=${mode}&count=5`)
+            .then(response => response.json())
+            .then(data => {
+                const colorsArray = data.colors.map(colorObj => colorObj.hex.value)
+                colorsContainers.forEach((container, index) => {
+                    const colorDisplay = container.children[0]
+                    const colorCode = container.children[1]
+                    colorDisplay.style.backgroundColor = colorsArray[index]
+                    colorCode.innerText = colorsArray[index]
+                })
+            })
+    })
 })
