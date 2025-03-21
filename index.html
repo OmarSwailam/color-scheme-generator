@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Generator</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="app">
+        <form class="generate-form">
+            <input class="color-select" type="color" name="color" aria-label="color" value="#2a63a5">
+            <!-- custom select -->
+            <div class="scheme-select" id="color-scheme" role="combobox" aria-expanded="false" aria-haspopup="listbox"
+                aria-label="color scheme">
+                <div class="scheme-select-selected">Monochrome</div>
+                <div class="scheme-select-options" role="listbox">
+                    <div class="scheme-option" role="option" data-value="monochrome">Monochrome</div>
+                    <div class="scheme-option" role="option" data-value="analogic">Analogic</div>
+                    <div class="scheme-option" role="option" data-value="complement">Complement</div>
+                </div>
+                <input type="hidden" name="color-scheme" id="color-scheme-input" value="monochrome">
+            </div>
+
+            <button class="generate-btn" type="submit" id="generate-btn">Get color scheme</button>
+        </form>
+
+        <div class="colors">
+
+            <div class="color-container">
+                <div class="color-display"></div>
+                <p class="color-code">#2a63a5</p>
+            </div>
+
+            <div class="color-container">
+                <div class="color-display"></div>
+                <p class="color-code">#467fcf</p>
+            </div>
+
+            <div class="color-container">
+                <div class="color-display"></div>
+                <p class="color-code">#fca311</p>
+            </div>
+
+            <div class="color-container">
+                <div class="color-display"></div>
+                <p class="color-code">#eff5fc</p>
+            </div>
+
+            <div class="color-container">
+                <div class="color-display"></div>
+                <p class="color-code">#1e293b</p>
+            </div>
+            
+        </div>
+
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+</html>

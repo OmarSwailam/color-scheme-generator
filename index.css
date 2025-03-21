@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #111827;
+
+}
+
+.generate-form {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding: 1.5em 1em;
+    gap: 1em;
+}
+
+.color-select {
+    width: 60px;
+    min-width: 60px;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #D1D5DB;
+    appearance: none;
+}
+
+.color-select::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.color-select::-webkit-color-swatch {
+    border: none;
+    border-radius: 6px;
+}
+
+.color-select::-moz-color-swatch {
+    border: none;
+    border-radius: 6px;
+}
+
+.scheme-select {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    padding: 0.75em 1em;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.scheme-select-selected::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    width: 0.8em;
+    height: 0.5em;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="%23A52A2A" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+}
+
+.scheme-select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #D1D5DB;
+    border-radius: 0 0 6px 6px;
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+.scheme-option {
+    padding: 0.75em 1em;
+}
+
+.scheme-option:hover {
+    background-color: #eff5fc;
+    color: #2a63a5;
+}
+
+.scheme-option.selected {
+    font-weight: bold;
+    color: #2a63a5;
+}
+
+.scheme-option.selected::after {
+    content: "✔";
+    float: right;
+    color: #2a63a5;
+}
+
+.generate-btn {
+    font-size: 0.8rem;
+    padding: 0.8em;
+    background-color: #ffffff;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 125px;
+    height: 100%;
+    color: #111827;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.generate-btn:hover {
+    background-color: #eff5fc;
+    border-color: #2a63a5;
+    color: #2a63a5;
+}
+
+.generate-btn:focus {
+    outline: none;
+    background-color: #eff5fc;
+    border-color: #2a63a5;
+    color: #2a63a5;
+    box-shadow: 0 0 0 3px rgba(42, 99, 165, 0.3);
+}
+
+.generate-btn:active {
+    background-color: #dce9f7;
+    border-color: #2a63a5;
+    color: #2a63a5;
+    transform: scale(0.98);
+}
+
+.colors {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.colors .color-container:nth-child(1) .color-display {
+    background-color: #2a63a5;
+}
+
+.colors .color-container:nth-child(2) .color-display {
+    background-color: #467fcf;
+}
+
+.colors .color-container:nth-child(3) .color-display {
+    background-color: #fca311;
+}
+
+.colors .color-container:nth-child(4) .color-display {
+    background-color: #eff5fc;
+}
+
+.colors .color-container:nth-child(5) .color-display {
+    background-color: #1e293b;
+}
+
+.color-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.color-display {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+.color-code {
+    width: 100%;
+    text-align: center;
+    color: #2B283A;
+    padding: 0.8em 1em;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .generate-form {
+        padding: 2em 2em;
+        gap: 1.5em;
+    }
+
+    .color-select {
+        width: 150px;
+        min-width: 80px;
+    }
+
+    .scheme-select {
+        font-size: 1.2rem;
+        padding: 1em 1.2em;
+    }
+
+    .scheme-option {
+        padding: 1em 1.2em;
+        font-size: 1.1rem;
+    }
+
+    .generate-btn {
+        font-size: 1rem;
+        padding: 1em 1.2em;
+        min-width: 200px;
+    }
+
+    .color-code {
+        padding: 1em 1.5em;
+        font-size: 1rem;
+    }
+}
